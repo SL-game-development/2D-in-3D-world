@@ -1,0 +1,4 @@
+﻿  game_map.cpp
+D:\项目\2D in 3D world\Server\game_map.h(9,24): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  main.cpp
+  正在生成代码...
