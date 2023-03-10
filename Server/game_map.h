@@ -70,6 +70,15 @@ struct GList//链表，单向，cur你敢自己操作我打死你，用函数！
 	{
 		return cur->me;
 	}
+	T* getnew()
+	{
+		if (now == 100)
+		{
+			pool = new T[100];
+			now = 0;
+		}
+		return T[now++];
+	}
 };
 struct _list
 {
@@ -100,6 +109,7 @@ class Item//方块类
 {
 public:
 	Item(Iupdate, Iplace, Idestroy, gmap*, std::string);
+	Item();
 	Item(Sitem, gmap*);
 	~Item();
 	std::map<std::string, std::string> date;
@@ -141,6 +151,7 @@ class Block//区块类，为了大地图的生成及省空间
 public:
 	Block();
 	~Block();
+	GList<Entity> entity;
 	std::pair<int, int> get_block_id();
 	Item get_char(int x, int y);
 private:

@@ -33,6 +33,14 @@ Item::Item(Sitem _item, gmap* _map)
 	this->Map = _map;
 	this->id = _item._id;
 }
+Item::Item()
+{
+	this->Update = NULL;
+	this->Place = NULL;
+	this->Destroy = NULL;
+	this->Map = NULL;
+	this->id = "";
+}
 Item::~Item() {};
 Addres Item::get_addres() { return this->addres; }
 void Item::set_addres(Addres _addres) { this->addres = _addres; }
@@ -73,7 +81,7 @@ int Entity::KillEntity()
 Addres Entity::get_addres() { return this->addres; }
 void Entity::set_addres(Addres _addres) { this->addres = _addres; }
 //区块类
-Block::Block(){}//区块的构造函数,需要写生成，seed;
+Block::Block() {}//区块的构造函数,需要写生成，seed;
 Block::~Block(){}//区块类的回收
 std::pair<int, int> Block::get_block_id()
 {
