@@ -36,7 +36,7 @@ struct Sentity
 	std::string _id;
 };
 template<typename T>
-struct GList
+struct GList//链表，单向，cur你敢自己操作我打死你，用函数！
 {
 	T pool[100];
 	int now = 0;
@@ -46,6 +46,29 @@ struct GList
 		this->first.prev = NULL;
 		this->first.next = NULL;
 		this->first.me = me;
+	}
+	_list *cur;
+	int curadd()
+	{
+		if (cur->next != NULL)
+		{
+			cur = cur->next;
+			return 0;
+		}
+		return 1;
+	}
+	void curless()
+	{
+		if (cur->prev != NULL)
+		{
+			cur = cur->prev;
+			return 0;
+		}
+		return 1;
+	}
+	T* getcur()
+	{
+		return cur->me;
 	}
 };
 struct _list
@@ -71,6 +94,7 @@ struct _list
 extern int Ilength = 0;//方块数量
 extern Sitem items[1000];
 extern int Elength = 0;//实体数量
+extern Sentity entitys[1000];
 //然后就是类的声明了
 class Item//方块类
 {
@@ -96,12 +120,14 @@ class Entity//实体类，大多与方块类一致
 {
 public:
 	Entity(Eupdate, Esummon, Ekill, gmap*, std::string);
+	Entity(Sentity, gmap*);
 	~Entity();
 	std::map<std::string, std::string> date;
 	void UpdateEntity();
 	int SummonEntity();
 	int KillEntity();
 	Addres get_addres();
+	void set_addres(Addres);
 	gmap* Map;
 	std::string id;
 private:
