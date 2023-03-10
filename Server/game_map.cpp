@@ -1,5 +1,5 @@
 #include "game_map.h"
-
+//
 int len = 0;
 std::string Itemlist[1 << 16];
 
@@ -15,13 +15,15 @@ int Item::DestroyItem()
 {
 	return this->Destroy(this);
 }
-Item::Item(Iupdate _update, Iplace _place, Idestroy _destroy, gmap* _map)
+Item::Item(Iupdate _update, Iplace _place, Idestroy _destroy, gmap* _map, std::string _id)
 {
 	this->Update = _update;
 	this->Place = _place;
 	this->Destroy = _destroy;
 	this->Map = _map;
+	this->id = _id;
 }
+Addres Item::get_addres() { return this->addres; }
 
 Block::Block(){}//区块的构造函数,需要写生成，seed;
 Block::~Block(){}//区块类的回收
