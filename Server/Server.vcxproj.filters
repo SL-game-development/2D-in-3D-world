@@ -26,5 +26,8 @@
     <ClInclude Include="game_map.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="map_macros.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

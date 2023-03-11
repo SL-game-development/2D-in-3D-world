@@ -2,6 +2,7 @@
 #include <utility>
 #include <map>
 #include <string>
+#include "map_macros.h"
 //基础类的声明
 class Item;
 class Entity;

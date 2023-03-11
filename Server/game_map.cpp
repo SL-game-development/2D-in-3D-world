@@ -9,11 +9,9 @@ std::map<Sentity, int> unentitys;//上面这个的反向
 void initall()
 {
 	//添加方块类型items[i]=Stiem();
-	items[0] = Sitem(NULL, NULL, NULL, "null");
-	unitems[items[0]] = 0;
+	newitem(NULL, NULL, NULL, "null", 0);
 	//添加实体类型entitys[i]=new Sentity();
-	entitys[0] = Sentity(NULL, NULL, NULL, "null");
-	unitems[items[0]] = 0;
+	newentity(NULL, NULL, NULL, "null", 0);
 }
 //方块类
 void Item::UpdateItem()
