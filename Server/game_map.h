@@ -14,7 +14,7 @@ typedef std::pair<int, int> Addres;
 //函数参数
 	//方块
 typedef void (*Iupdate)(Item*);//更新方块数据
-typedef int (*Iplace)(Item*);//放置方块
+typedef int (*Iplace)(Item*);//放置 方块
 typedef int (*Idestroy)(Item*);//破坏方块
 	//实体
 typedef void (*Eupdate)(Entity*);//更新实体数据
@@ -120,6 +120,8 @@ public:
 	void set_addres(Addres);
 	gmap* Map;
 	std::string id;
+	bool operator==(const Item& I) const;
+	Item &operator=(const Item& I);
 private:
 	Addres addres;
 	Iupdate Update;
@@ -131,6 +133,7 @@ class Entity//实体类，大多与方块类一致
 public:
 	Entity(Eupdate, Esummon, Ekill, gmap*, std::string);
 	Entity(Sentity, gmap*);
+	Entity();
 	~Entity();
 	std::map<std::string, std::string> date;
 	void UpdateEntity();
@@ -151,9 +154,11 @@ class Block//区块类，为了大地图的生成及省空间
 public:
 	Block();
 	~Block();
-	GList<Entity> entity;
+	GList<Entity> entity = *(new GList<Entity>(new Entity));
 	std::pair<int, int> get_block_id();
 	Item get_char(int x, int y);
+	void update();
+	void init(int seed);//生成，没想到算法
 private:
 	Item m[256][256];//区块的信息
 	int x, y;//区块的编号

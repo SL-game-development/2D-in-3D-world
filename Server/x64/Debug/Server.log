@@ -1,4 +1,30 @@
 ﻿  game_map.cpp
-D:\项目\2D in 3D world\Server\game_map.h(9,24): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-  main.cpp
-  正在生成代码...
+D:\项目\2D in 3D world\Server\game_map.h(43,8): error C3646: “first”: 未知重写说明符
+D:\项目\2D in 3D world\Server\game_map.h(82): message : 查看对正在编译的 类 模板 实例化“GList<T>”的引用
+D:\项目\2D in 3D world\Server\game_map.h(43,1): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\项目\2D in 3D world\Server\game_map.h(50,8): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+D:\项目\2D in 3D world\Server\game_map.h(50,1): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\项目\2D in 3D world\Server\game_map.h(50,1): error C2238: 意外的标记位于“;”之前
+D:\项目\2D in 3D world\Server\game_map.h(53,7): error C2065: “cur”: 未声明的标识符
+D:\项目\2D in 3D world\Server\game_map.h(53,7): error C3861: “cur”: 找不到标识符
+D:\项目\2D in 3D world\Server\game_map.h(55,4): error C3861: “cur”: 找不到标识符
+D:\项目\2D in 3D world\Server\game_map.h(55,10): error C3861: “cur”: 找不到标识符
+D:\项目\2D in 3D world\Server\game_map.h(62,7): error C2065: “cur”: 未声明的标识符
+D:\项目\2D in 3D world\Server\game_map.h(62,7): error C3861: “cur”: 找不到标识符
+D:\项目\2D in 3D world\Server\game_map.h(64,4): error C3861: “cur”: 找不到标识符
+D:\项目\2D in 3D world\Server\game_map.h(64,10): error C3861: “cur”: 找不到标识符
+D:\项目\2D in 3D world\Server\game_map.h(71,10): error C3861: “cur”: 找不到标识符
+D:\项目\2D in 3D world\Server\game_map.cpp(3,5): error C2374: “Ilength”: 重定义；多次初始化
+D:\项目\2D in 3D world\Server\game_map.h(103): message : 参见“Ilength”的声明
+D:\项目\2D in 3D world\Server\game_map.cpp(6,5): error C2374: “Elength”: 重定义；多次初始化
+D:\项目\2D in 3D world\Server\game_map.h(105): message : 参见“Elength”的声明
+D:\项目\2D in 3D world\Server\game_map.cpp(52,1): error C2059: 语法错误:“}”
+D:\项目\2D in 3D world\Server\game_map.cpp(104,22): warning C4552: ”+“: 未使用表达式结果
+D:\项目\2D in 3D world\Server\game_map.cpp(145,46): error C2660: “randprint”: 函数不接受 4 个参数
+D:\项目\2D in 3D world\Server\game_map.cpp(134,6): message : 参见“randprint”的声明
+D:\项目\2D in 3D world\Server\game_map.cpp(150,35): error C2660: “randprint”: 函数不接受 4 个参数
+D:\项目\2D in 3D world\Server\game_map.cpp(134,6): message : 参见“randprint”的声明
+D:\项目\2D in 3D world\Server\game_map.cpp(155,35): error C2660: “randprint”: 函数不接受 4 个参数
+D:\项目\2D in 3D world\Server\game_map.cpp(134,6): message : 参见“randprint”的声明
+D:\项目\2D in 3D world\Server\game_map.cpp(160,35): error C2660: “randprint”: 函数不接受 4 个参数
+D:\项目\2D in 3D world\Server\game_map.cpp(134,6): message : 参见“randprint”的声明
