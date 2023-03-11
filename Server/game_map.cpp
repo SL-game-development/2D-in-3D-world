@@ -2,11 +2,20 @@
 //变量的定义
 int Ilength = 0;//方块数量
 Sitem items[1000];
-//添加方块类型items[i]=new Stiem();
+std::map<Sitem, int> unitems;//上面这个的反向
 int Elength = 0;//实体数量
 Sentity entitys[1000];
-//添加实体类型entitys[i]=new Sentity();
-
+std::map<Sentity, int> unentitys;//上面这个的反向
+void initall()
+{
+	//添加方块类型items[i]=Stiem();
+	items[0] = Sitem(NULL, NULL, NULL, "null");
+	unitems[items[0]] = 0;
+	//添加实体类型entitys[i]=new Sentity();
+	entitys[0] = Sentity(NULL, NULL, NULL, "null");
+	unitems[items[0]] = 0;
+}
+//方块类
 void Item::UpdateItem()
 {
 	this->Update(this);
@@ -166,7 +175,7 @@ void Block::init(int seed)
 	int n = news(this->x, this->y, seed, T, type);
 	for (int i = 0; i < n; i++)
 	{
-		randprint(type[i], T[i]))
+		randprint(type[i], T[i], 10, , this->);
 	}
 }
 void Block::update()

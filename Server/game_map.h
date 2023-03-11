@@ -23,6 +23,14 @@ typedef int (*Ekill)(Entity*);//杀死实体
 //一些辅助struct的声明与定义
 struct Sitem//item 类的值
 {
+	Sitem(Iupdate _update, Iplace _place, Idestroy _destroy, std::string id)
+	{
+		this->_update = _update;
+		this->_place = _place;
+		this->_destroy = _destroy;
+		this->_id = _id;
+	}
+	Sitem(){}
 	Iupdate _update;
 	Iplace _place;
 	Idestroy _destroy;
@@ -30,10 +38,37 @@ struct Sitem//item 类的值
 };
 struct Sentity
 {
+	Sentity(Eupdate _update, Esummon _summon, Ekill _kill, std::string _id)
+	{
+		this->_update = _update;
+		this->_summon = _summon;
+		this->_kill = _kill;
+		this->_id = _id;
+	}
+	Sentity(){}
 	Eupdate _update;
 	Esummon _summon;
 	Ekill _kill;
 	std::string _id;
+};
+struct _list
+{
+	_list* prev;
+	_list* next;
+	void* me;
+	void del()//删完记得delete这个家伙
+	{
+		prev->next = next;
+		next->prev = prev;
+		delete me;
+	}
+	void add(_list* newone)//在后面加
+	{
+		_list* lnext = next;
+		next = newone;
+		newone->prev = this;
+		newone->next = lnext;
+	}
 };
 template<typename T>
 struct GList//链表，单向，cur你敢自己操作我打死你，用函数！
@@ -80,30 +115,14 @@ struct GList//链表，单向，cur你敢自己操作我打死你，用函数！
 		return T[now++];
 	}
 };
-struct _list
-{
-	_list* prev;
-	_list* next;
-	void* me;
-	void del()//删完记得delete这个家伙
-	{
-		prev->next = next;
-		next->prev = prev;
-		delete me;
-	}
-	void add(_list* newone)//在后面加
-	{
-		_list* lnext = next;
-		next = newone;
-		newone->prev = this;
-		newone->next = lnext;
-	}
-};
 //全局变量的声明，记得加extern并且在同名的.cpp中定义
 extern int Ilength = 0;//方块数量
 extern Sitem items[1000];
+extern std::map<Sitem, int> unitems;//上面这个的反向
 extern int Elength = 0;//实体数量
 extern Sentity entitys[1000];
+extern std::map<Sentity, int> unentitys;//上面这个的反向
+extern void initall();
 //然后就是类的声明了
 class Item//方块类
 {
